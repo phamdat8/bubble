@@ -1,0 +1,22 @@
+<%= render 'user/layouts/nav' %>
+<div class="container border border-primary rounded p-2">
+    <h1 class="text-center">Chỉnh sửa thông tin</h1>
+    <div class="m-5">
+        <%= form_tag "/user/users", multipart: true do %>
+            <input type="hidden" name="user[id]" value="<%=@user.id%>">
+            <div class="field form-group m-2">
+                <h5>Tên:</h5>
+                <input name="user[name]" type="text" class="form-control" value="<%=@user.name%>">
+            </div>
+            <div class="field form-group m-2">
+                <h5>Avatar:</h5>
+                <input name="user[image]" type="file">
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
+            </div>
+        <% end %>
+        
+    </div>
+</div>

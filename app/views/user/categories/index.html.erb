@@ -1,0 +1,13 @@
+<%= render 'user/layouts/nav' %>
+<div class="container border border-primary rounded p-2">
+    <h1 class="text-center">Danh mục</h1>
+    <div>
+        <% @categories.each do |category| %>
+            <a href="/user/categories/<%=category.id%>">
+                <div class=" m-3 p-3 post-box">
+                    <h1><%= category.name %></h1>
+                </div>
+            </a>
+        <% end %>
+    </div>
+</div>

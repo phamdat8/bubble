@@ -1,0 +1,13 @@
+<%= render 'user/layouts/nav' %>
+<div class="container border border-primary rounded p-2">
+    <h1 class="text-center">Bài học</h1>
+    <div>
+        <% @lessons.each do |lesson| %>
+            <a href="/user/lessons/<%=lesson.id%>">
+                <div class=" m-3 p-3 post-box">
+                    <h2><%= lesson.name %></h2>
+                </div>
+            </a>
+        <% end %>
+    </div>
+</div>

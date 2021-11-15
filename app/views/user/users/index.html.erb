@@ -1,0 +1,17 @@
+<%= render 'user/layouts/nav' %>
+<div id="user-info" class="m-4">
+    <div class="row">
+        <div class="col-3 text-center">
+            <div class="img-info">
+                <%= image_tag @user.image if @user.image.present? %>
+            </div>
+        </div>
+        <div class="col-9 p-3">
+            <h5>Email: <%= @user.email %></h5>
+            <h5>Tên: <%= @user.name %></h5>
+        </div>
+    </div>
+    <div>
+        <a href="/user/users/edit"><button class="btn btn-primay">Cập nhật</button></a>
+    </div>   
+</div>

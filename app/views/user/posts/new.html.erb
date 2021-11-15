@@ -1,0 +1,18 @@
+<%= render 'user/layouts/nav' %>
+<div class="container border border-primary rounded p-2">
+    <h1>Thêm bài viết mới</h1>
+    <%= form_for ([:user, @post]) do |form| %>
+        <div class="field form-group m-2">
+            Nội dung
+            <%= form.text_area :content, class:"form-control" %>
+        </div>
+        <div class="field m-2">
+            <%= form.file_field :image%>
+        </div>
+
+        <div class="actions">
+            <%= form.submit class:"btn btn-primary" %>
+        </div>
+
+    <% end %>
+</div>

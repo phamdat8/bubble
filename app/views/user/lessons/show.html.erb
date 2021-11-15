@@ -1,0 +1,18 @@
+<%= render 'user/layouts/nav' %>
+<div class="container border border-primary rounded p-2">
+    <h1 class="text-center">Làm bài</h1>
+    <div class="m-5">
+        <%= form_tag "/user/completes" do %>
+            <% @questions.each_with_index do |question, index| %>
+                <div>
+                    <input type="hidden" name="submit[lesson]" value="<%= @lesson %>">
+                    <h3>Câu <%=index+1%>:<%= question.name %><h3>
+                    <% question.answer.each do |answer| %>
+                        <input type="radio" name="submit[<%= question.id%>]" value="<%= answer.id%>"> <%= answer.name %><br/>
+                    <% end %>
+                </div>
+            <% end %>
+            <button type="submit" class="btn btn-primary">Nộp bài</button>
+        <% end %>
+    </div>
+</div>

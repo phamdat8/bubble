@@ -1,0 +1,11 @@
+<%= render 'user/layouts/nav' %>
+<div class="container border border-primary rounded p-2 text-center">
+    <b><h1>Hoàn thành bài thi</h1></b>
+    <h2>Điểm của bạn là: <%= @point %>/<%= @total %></h2>
+    <% if @rate < 0.8 %>
+        <h3><div class="text-danger">Bài thi không đạt</div></h3>
+    <% else %>
+        <h3><div class="text-success">Bài thi đạt yêu cầu</div></h3>
+    <% end %>
+    <a href="/user/categories"><button class="btn btn-primary">Trở về</button></a>
+</div>
