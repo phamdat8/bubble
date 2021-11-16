@@ -1,5 +1,37 @@
 <%= render 'user/layouts/nav' %>
 <div class="container border border-primary rounded p-2">
-    <a href="/user/posts/new"><button class="btn btn-outline-success">Thêm bài viết</button></a>
-    
+    <div class=" m-3 p-2 post-box">
+        <div class="user m-0">
+            <b><%= @post.user.email %></b>
+        </div>
+        <div class="m-0 p-2">
+            <%= @post.content%>
+            <div class="text-center">
+                <%= image_tag @post.image if @post.image.present? %>
+            </div>                    
+        </div>
+        <hr/>
+        <div class="ps-5">
+            Bình luận:
+            <% @comments.each do |comment| %>
+                <div class="ps-3">
+                    <b><%=comment.user.name%></b>:<%= comment.name %>
+                </div>
+            <% end %>
+            <%= form_tag "/user/comments" do %>
+                <div class="row">
+                    <div class="ps-3 col-9">
+                        <input name="comment[post_id]" type="hidden" value = "<%=@post.id%>"> 
+                        <input name="comment[name]" type="text" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-primary">Bình Luận</button>
+                    </div>
+                </div>
+                
+
+            <% end %>
+
+        </div>
+    </div>
 </div>

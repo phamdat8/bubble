@@ -1,9 +1,13 @@
 <%= render 'user/layouts/nav' %>
-<div id="user-info" class="m-4">
+<div class="container border border-primary rounded p-2">
     <div class="row">
         <div class="col-3 text-center">
             <div class="img-info">
-                <%= image_tag @user.image if @user.image.present? %>
+                <% if @user.image.present?%>
+                    <%= image_tag @user.image%>
+                <% else %>
+                    <img src="<%= image_url('bubble1.jpg') %>">
+                <% end %>
             </div>
         </div>
         <div class="col-9 p-3">
@@ -12,6 +16,26 @@
         </div>
     </div>
     <div>
-        <a href="/user/users/edit"><button class="btn btn-primay">Cập nhật</button></a>
-    </div>   
+        <a href="/user/users/edit"><button class="btn btn-primary">Cập nhật</button></a>
+    </div>
+    <hr/>
+    <div>
+        <h1>Bài viết</h1>
+        <% @posts.each do |post| %>
+            <a href="/user/posts/<%= post.id %>">
+                <div class=" m-3 p-2 post-box">
+                    <div class="user m-0">
+                        <b><%= post.user.email %></b>
+                    </div>
+                    <div class="m-0 p-2">
+                        <%= post.content%>
+                        <div class="text-center">
+                            <%= image_tag post.image if post.image.present? %>
+                        </div>                    
+                    </div>
+                </div>
+            </a>
+        <% end %>
+    </div>
+
 </div>

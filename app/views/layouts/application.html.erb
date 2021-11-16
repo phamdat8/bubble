@@ -23,8 +23,13 @@
     
     <div style="height:105px"></div>
     <div class="container-fluid">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+      
+      
     </div>
     <%= yield %>
     

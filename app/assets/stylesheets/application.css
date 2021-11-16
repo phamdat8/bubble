@@ -89,8 +89,27 @@
   }
   a{
     text-decoration: none;
+    color: black;
   }
   .vue-notification{
     font-size: 20px;
     border-radius: 25px;
+  }
+  .nav-text{
+      font-size: 40px;
+      font-weight: bold;
+  }
+  .notice{
+    text-align: center;
+    background: #75f8af;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .alert{
+    text-align: center;
+    background:red;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
   }

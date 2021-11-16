@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   root to: 'home#index'
   namespace :user do
     resources :posts
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
     resources :completes
     root to: 'users#index'
     resource :users
+    resources :documents
+    resources :comments
   end
   
 end

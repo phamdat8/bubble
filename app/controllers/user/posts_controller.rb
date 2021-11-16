@@ -4,6 +4,8 @@ class User::PostsController < ApplicationController
     end
 
     def show
+        @post = Post.find(params[:id])
+        @comments = Comment.where(post_id: params[:id]).joins(:user)
     end
 
     def new

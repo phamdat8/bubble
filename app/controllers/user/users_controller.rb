@@ -1,6 +1,7 @@
 class User::UsersController < ApplicationController
     def index
         @user = User.find(current_user.id)
+        @posts = Post.where(user_id: current_user.id)
     end
 
     def edit

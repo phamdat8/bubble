@@ -5,12 +5,16 @@
             <div>
                 <div class="dropdown">
                     <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <%= image_tag current_user.image, class: "img-nav"%>
+                        <% if current_user.image.present? %>
+                            <%= image_tag current_user.image, class: "img-nav" if current_user.image.present?%>
+                        <% else %>
+                            <img src="<%= image_url('bubble1.jpg') %>" class="img-nav">
+                        <% end %>
                     </div>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="/">Trang chính</a></li>
-                        <li><a class="dropdown-item" href="/user/posts">Dashboard</a></li>
-                        <li><a class="dropdown-item" data-method="delete" href="users/sign_out">Đăng xuất</a></li>
+                        <li><a class="dropdown-item" href="/user/posts">Cá nhân</a></li>
+                        <li><a class="dropdown-item" data-method="delete" href="/users/sign_out">Đăng xuất</a></li>
                     </ul>
                 </div>
             </div>

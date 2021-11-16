@@ -1,0 +1,22 @@
+<%= render 'user/layouts/nav' %>
+<div class="container border border-primary rounded p-2">
+    <div class="">
+        <% @docs.each do |doc| %>
+            <div class=" m-3 p-2 post-box">
+                <div class="m-0 p-2">
+                    <h3><%= doc.name%></h3>
+                    <div class="text-center">
+                        <%= image_tag doc.image, class:"doc-img p-5" if doc.image.present?  %>
+                    </div>
+                    <% if doc.file.present? %>
+                        <hr/>
+                        File đính kèm:
+                        <%= doc.file.filename %>
+                        <%= link_to 'download', rails_blob_path(doc.file, disposition: "attachment") %> 
+                    <% end %>
+                                     
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
