@@ -6,7 +6,7 @@
                 <div class="dropdown">
                     <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <% if current_user.image.present? %>
-                            <%= image_tag current_user.image, class: "img-nav" if current_user.image.present?%>
+                            <%= image_tag current_user.image, class: "img-nav"%>
                         <% else %>
                             <img src="<%= image_url('bubble1.jpg') %>" class="img-nav">
                         <% end %>

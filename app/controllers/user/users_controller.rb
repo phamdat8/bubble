@@ -11,6 +11,7 @@ class User::UsersController < ApplicationController
     def create
         @user = User.find(current_user.id)
         @user.update(user_params)
+        @posts = Post.where(user_id: current_user.id)
         render :index
     end
 
