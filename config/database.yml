@@ -21,6 +21,8 @@ test:
 
 production:
   <<: *default
-  database: Rails_Training_production
-  username: Rails_Training
-  password: <%= ENV['RAILS_TRAINING_DATABASE_PASSWORD'] %>
+  database: Bubble_production
+  username: phamdat
+  password: ''
+  port: 5432
+  timeout: 5000
