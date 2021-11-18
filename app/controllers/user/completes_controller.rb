@@ -1,4 +1,5 @@
 class User::CompletesController < ApplicationController
+    before_action :authenticate_user!
     def create
         questions = Question.where("lesson_id = #{quiz_params["lesson"]}")
         point = 0

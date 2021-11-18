@@ -13,6 +13,9 @@
                     </div>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="/">Trang chính</a></li>
+                        <%if current_user.is_admin? %>
+                            <li><a class="dropdown-item" href="/admin">Admin</a></li>
+                        <% end %>
                         <li><a class="dropdown-item" href="/user/posts">Cá nhân</a></li>
                         <li><a class="dropdown-item" data-method="delete" href="/users/sign_out">Đăng xuất</a></li>
                     </ul>
