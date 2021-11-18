@@ -2,20 +2,6 @@
 <div class="container border border-primary rounded p-2">
     <a href="/user/posts/new"><button class="btn btn-outline-success">Thêm bài viết</button></a>
     <div class="">
-        <% @posts.each do |post| %>
-            <a href="/user/posts/<%= post.id %>">
-                <div class=" m-3 p-2 post-box">
-                    <div class="user m-0">
-                        <b><%= post.user.email %></b>
-                    </div>
-                    <div class="m-0 p-2">
-                        <%= post.content%>
-                        <div class="text-center">
-                            <%= image_tag post.image if post.image.present? %>
-                        </div>                    
-                    </div>
-                </div>
-            </a>
-        <% end %>
+        <%= render :partial => 'user/layouts/posts', posts: @posts %>
     </div>
 </div>
