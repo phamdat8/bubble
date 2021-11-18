@@ -69,3 +69,82 @@ puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
 puma (5.5.2) lib/puma/server.rb:447:in `process_client'
 puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Warning: the running version of Bundler (2.2.15) is older than the version that created the lockfile (2.2.20). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.20`.
+=> Booting Puma
+=> Rails 6.1.4.1 application starting in production 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.5.2 (ruby 3.0.1-p64) ("Zawgyi")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: production
+*          PID: 18819
+* Listening on http://0.0.0.0:3000
+Use Ctrl-C to stop
+W, [2021-11-18T07:54:03.048129 #18819]  WARN -- omniauth: (google_oauth2)   You are using GET as an allowed request method for OmniAuth. This may leave
+  you open to CSRF attacks. As of v2.0.0, OmniAuth by default allows only POST
+  to its own routes. You should review the following resources to guide your
+  mitigation:
+  https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284
+  https://github.com/omniauth/omniauth/issues/960
+  https://nvd.nist.gov/vuln/detail/CVE-2015-9284
+  https://github.com/omniauth/omniauth/pull/809
+
+  You can ignore this warning by setting:
+  OmniAuth.config.silence_get_warning = true
+
+D, [2021-11-18T07:54:03.054209 #18819] DEBUG -- omniauth: (google_oauth2) Request phase initiated.
+W, [2021-11-18T07:56:21.046776 #18819]  WARN -- omniauth: (google_oauth2)   You are using GET as an allowed request method for OmniAuth. This may leave
+  you open to CSRF attacks. As of v2.0.0, OmniAuth by default allows only POST
+  to its own routes. You should review the following resources to guide your
+  mitigation:
+  https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284
+  https://github.com/omniauth/omniauth/issues/960
+  https://nvd.nist.gov/vuln/detail/CVE-2015-9284
+  https://github.com/omniauth/omniauth/pull/809
+
+  You can ignore this warning by setting:
+  OmniAuth.config.silence_get_warning = true
+
+D, [2021-11-18T07:56:21.046873 #18819] DEBUG -- omniauth: (google_oauth2) Request phase initiated.
+W, [2021-11-18T07:57:51.868903 #18819]  WARN -- omniauth: (google_oauth2)   You are using GET as an allowed request method for OmniAuth. This may leave
+  you open to CSRF attacks. As of v2.0.0, OmniAuth by default allows only POST
+  to its own routes. You should review the following resources to guide your
+  mitigation:
+  https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284
+  https://github.com/omniauth/omniauth/issues/960
+  https://nvd.nist.gov/vuln/detail/CVE-2015-9284
+  https://github.com/omniauth/omniauth/pull/809
+
+  You can ignore this warning by setting:
+  OmniAuth.config.silence_get_warning = true
+
+D, [2021-11-18T07:57:51.868964 #18819] DEBUG -- omniauth: (google_oauth2) Request phase initiated.
+D, [2021-11-18T07:57:55.299616 #18819] DEBUG -- omniauth: (google_oauth2) Callback phase initiated.
+W, [2021-11-18T07:58:18.113624 #18819]  WARN -- omniauth: (google_oauth2)   You are using GET as an allowed request method for OmniAuth. This may leave
+  you open to CSRF attacks. As of v2.0.0, OmniAuth by default allows only POST
+  to its own routes. You should review the following resources to guide your
+  mitigation:
+  https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284
+  https://github.com/omniauth/omniauth/issues/960
+  https://nvd.nist.gov/vuln/detail/CVE-2015-9284
+  https://github.com/omniauth/omniauth/pull/809
+
+  You can ignore this warning by setting:
+  OmniAuth.config.silence_get_warning = true
+
+D, [2021-11-18T07:58:18.113748 #18819] DEBUG -- omniauth: (google_oauth2) Request phase initiated.
+W, [2021-11-18T08:05:35.371455 #18819]  WARN -- omniauth: (google_oauth2)   You are using GET as an allowed request method for OmniAuth. This may leave
+  you open to CSRF attacks. As of v2.0.0, OmniAuth by default allows only POST
+  to its own routes. You should review the following resources to guide your
+  mitigation:
+  https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284
+  https://github.com/omniauth/omniauth/issues/960
+  https://nvd.nist.gov/vuln/detail/CVE-2015-9284
+  https://github.com/omniauth/omniauth/pull/809
+
+  You can ignore this warning by setting:
+  OmniAuth.config.silence_get_warning = true
+
+D, [2021-11-18T08:05:35.374204 #18819] DEBUG -- omniauth: (google_oauth2) Request phase initiated.
+D, [2021-11-18T08:05:38.834971 #18819] DEBUG -- omniauth: (google_oauth2) Callback phase initiated.
