@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_one_attached :image
 
   validates :email, presence: true
-  validates :password, presence: true
 
 
   def self.from_omniauth(access_token)
