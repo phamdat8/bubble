@@ -14,7 +14,7 @@ class User < ApplicationRecord
     if user
       user
     else
-      user = User.create(username: data['name'],
+      user = User.create(
          email: data['email'],
          password: Devise.friendly_token[0,20],
          uid: access_token[:uid],
