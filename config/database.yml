@@ -23,7 +23,3 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
