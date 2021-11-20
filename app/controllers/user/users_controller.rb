@@ -4,6 +4,7 @@ class User::UsersController < ApplicationController
         redirect_to edit_user_users_path(current_user) unless current_user.name
         @user = User.find(current_user.id)
         @posts = Post.where(user_id: current_user.id)
+        @process = Complete.where(user_id: current_user.id)
     end
 
     def edit

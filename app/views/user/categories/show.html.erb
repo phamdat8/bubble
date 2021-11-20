@@ -6,6 +6,11 @@
             <a href="/user/lessons/<%=lesson.id%>">
                 <div class=" m-3 p-3 post-box">
                     <h2><%= lesson.name %></h2>
+                    <% if lesson.complete == true %>
+                        <h5 class="text-success">Đã hoàn thành</h5>
+                    <% else %>
+                        <h5 class="text-danger">Chưa hoàn thành</h5>
+                    <% end %>
                 </div>
             </a>
         <% end %>

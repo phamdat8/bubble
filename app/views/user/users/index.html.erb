@@ -13,6 +13,10 @@
         <div class="col-9 p-3">
             <h5>Email: <%= @user.email %></h5>
             <h5>Tên: <%= @user.name %></h5>
+            <div class="row">
+                <div class="col-6"><h5>Đã đăng <%=@posts.length%> bài viết</h5></div>
+                <div class="col-6"><h5>Đã hoàn thành <%=@process.length%> bài học</h5></div>
+            </div>
         </div>
     </div>
     <div>
