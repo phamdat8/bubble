@@ -13,6 +13,17 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  def login_qr
+    @users = User.where("code = '#{params[:code]}'")
+    if @users.length == 0
+      @user = User.new
+      render :new
+    else
+      sign_in_and_redirect @users[0]
+    end
+    
+  end
+
   # DELETE /resource/sign_out
   # def destroy
   #   super
