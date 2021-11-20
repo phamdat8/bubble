@@ -1,8 +1,12 @@
 class User::UsersController < ApplicationController
     before_action :authenticate_user!
     def index
+        
         redirect_to edit_user_users_path(current_user) unless current_user.name
         @user = User.find(current_user.id)
+
+        ApplicationMailer.welcome_email(@user).deliver
+
         @user.update(code: SecureRandom.hex)
         @posts = Post.where(user_id: current_user.id)
         qrcode = RQRCode::QRCode.new("#{request.host}/login-qr/#{@user.code}")
