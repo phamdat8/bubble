@@ -13,10 +13,33 @@
         <div class="col col-lg-9 col-sm-12 p-3">
             <h5>Email: <%= @user.email %></h5>
             <h5>Tên: <%= @user.name %></h5>
+            <div class="row">
+                <div class="col-6"><h5>Đã đăng <%=@posts.length%> bài viết</h5></div>
+                <div class="col-6"><h5>Đã hoàn thành <%=@process.length%> bài học</h5></div>
+            </div>
         </div>
     </div>
-    <div>
-        <a href="/user/users/edit"><button class="btn btn-primary">Cập nhật</button></a>
+    
+    <div class="row">
+        <a href="/user/users/edit" class="col-6"><button class="btn btn-primary">Cập nhật</button></a>
+        <!-- Button trigger modal -->
+        <div class="col-6">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Đăng nhập bằng QRcode
+            </button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center p-5">
+                <div class="p-5">
+                    <%= @svg.html_safe %>
+                    <h5 class="mt-2">Quét để đăng nhập</h5>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
     <hr/>
     <div>

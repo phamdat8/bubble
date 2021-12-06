@@ -1,9 +1,24 @@
 class User::UsersController < ApplicationController
     before_action :authenticate_user!
     def index
+        
         redirect_to edit_user_users_path(current_user) unless current_user.name
         @user = User.find(current_user.id)
+
+        Welcome_mailer.mailer(@user).deliver
+
+        @user.update(code: SecureRandom.hex)
         @posts = Post.where(user_id: current_user.id)
+        qrcode = RQRCode::QRCode.new("#{request.host}/login-qr/#{@user.code}")
+        @svg = qrcode.as_svg(
+            offset: 0,
+            color: '000',
+            shape_rendering: 'crispEdges',
+            module_size: 6,
+            standalone: true
+        )
+        @process = Complete.where(user_id: current_user.id)
+
     end
 
     def edit
@@ -14,6 +29,7 @@ class User::UsersController < ApplicationController
         @user = User.find(current_user.id)
         @user.update(user_params)
         @posts = Post.where(user_id: current_user.id)
+        @process = Complete.where(user_id: current_user.id)
         render :index
     end
 

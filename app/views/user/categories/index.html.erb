@@ -6,6 +6,7 @@
             <a href="/user/categories/<%=category.id%>">
                 <div class=" m-3 p-3 post-box">
                     <h1><%= category.name %></h1>
+                    <h5>Đã hoàn thành <%= category.process %>/<%= category.total %></h5>
                 </div>
             </a>
         <% end %>

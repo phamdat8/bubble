@@ -1,3 +1,8 @@
+<% if @posts.length == 0 %>
+<h1 class="text-center">
+    Chưa có bài viết nào
+</h1>
+<% end %>
 <% @posts.each do |post| %>
     <a href="/user/posts/<%= post.id %>">
         <div class=" m-3 p-2 post-box">

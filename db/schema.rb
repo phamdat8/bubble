@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_034404) do
+ActiveRecord::Schema.define(version: 2021_11_20_051226) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_11_18_034404) do
     t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "total", default: 0
+    t.integer "process", default: 0
   end
 
   create_table "comments", force: :cascade do |t|
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_034404) do
     t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "complete", default: false
     t.index ["category_id"], name: "index_lessons_on_category_id"
   end
 
@@ -123,6 +126,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_034404) do
     t.string "provider"
     t.string "uid"
     t.integer "user_role", default: 0
+    t.string "code"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
