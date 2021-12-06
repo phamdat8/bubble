@@ -1,7 +1,7 @@
 <%= render 'user/layouts/nav' %>
 <div class="container border border-primary rounded p-2">
     <div class="row">
-        <div class="col-3 text-center">
+        <div class="col col-lg-3 col-sm-12 text-center">
             <div class="img-info">
                 <% if @user.image.present?%>
                     <%= image_tag @user.image%>
@@ -10,7 +10,7 @@
                 <% end %>
             </div>
         </div>
-        <div class="col-9 p-3">
+        <div class="col col-lg-9 col-sm-12 p-3">
             <h5>Email: <%= @user.email %></h5>
             <h5>Tên: <%= @user.name %></h5>
         </div>

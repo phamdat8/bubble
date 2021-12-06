@@ -75,7 +75,7 @@
   border-radius: 50%;
 }
 .dropdown{
-  padding-left: 100px;
+  padding-left: 80px;
 }
 .bg-pink{
     background-color: #ffd1dc;
@@ -96,7 +96,7 @@
     border-radius: 25px;
   }
   .nav-text{
-      font-size: 40px;
+      font-size: 3vw;
       font-weight: bold;
   }
   .notice{
