@@ -1,11 +1,29 @@
 <%= render 'user/layouts/nav' %>
-<div class="container border border-primary rounded p-2 text-center">
-    <b><h1>Hoàn thành bài thi</h1></b>
-    <h2>Điểm của bạn là: <%= @point %>/<%= @total %></h2>
-    <% if @rate < 0.8 %>
-        <h3><div class="text-danger">Bài thi không đạt</div></h3>
-    <% else %>
-        <h3><div class="text-success">Bài thi đạt yêu cầu</div></h3>
+<div class="container border border-primary rounded p-2">
+    <div class="text-center">
+        <b><h1>Hoàn thành bài thi</h1></b>
+        <h2>Điểm của bạn là: <%= @point %>/<%= @list.length %></h2>
+        <% if @rate < 0.8 %>
+            <h3><div class="text-danger">Bài thi không đạt</div></h3>
+        <% else %>
+            <h3><div class="text-success">Bài thi đạt yêu cầu</div></h3>
+        <% end %>
+        <a href="/user/categories"><button class="btn btn-primary">Trở về</button></a>
+    </div>
+    
+    <div class="text-left">
+    <h1>Kết quả</h1>
+    <div>
+    <% @list.each_with_index do |question, index| %>
+        <div>
+            <% if question["is_correct"] %>
+                <h3><i class="fas fa-check text-success"></i>Câu <%=index+1%>:<%= question["question"] %> <h3>
+                    <h5 class="text-success mx-3"><%= question["right"] %></h5>
+            <% else %>
+                <h3><i class="fas fa-times text-danger"></i>Câu <%=index+1%>:<%= question["question"] %> <h3>
+                    <h5 class="text-success mx-3"><%= question["right"] %></h5>
+                    <h5 class="text-danger mx-3"><%= question["wrong"] %></h5>
+            <% end %>
+        </div>
     <% end %>
-    <a href="/user/categories"><button class="btn btn-primary">Trở về</button></a>
 </div>
