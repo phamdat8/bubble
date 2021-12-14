@@ -6,10 +6,11 @@
             <% @questions.each_with_index do |question, index| %>
                 <div>
                     <input type="hidden" name="submit[lesson]" value="<%= @lesson %>">
-                    <h3>Câu <%=index+1%>:<%= question.name %><h3>
-                    <% question.answer.each do |answer| %>
-                        <input type="radio" name="submit[<%= question.id%>]" value="<%= answer.id%>"> <%= answer.name %><br/>
-                    <% end %>
+                    <h3><b>Câu <%=index+1%>:<%= question.name %></b>
+                        <% question.answer.each do |answer| %>
+                            <input type="radio" name="submit[<%= question.id%>]" value="<%= answer.id%>" required> <%= answer.name %><br/>
+                        <% end %>
+                    </h3>
                 </div>
             <% end %>
             <button type="submit" class="btn btn-primary">Nộp bài</button>

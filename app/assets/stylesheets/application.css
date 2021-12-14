@@ -70,11 +70,10 @@
 .img-nav{
   height: 50px;
   width: 50px;
-  margin-right: 30px;
   border-radius: 50%;
 }
 .dropdown{
-  padding-left: 80px;
+  padding-left: 50px;
 }
 .bg-pink{
     background-color: #ffd1dc;

@@ -13,10 +13,8 @@ class User::CompletesController < ApplicationController
             data[:right] = Answer.where(is_correct: true, question_id: question.id).first.name
             if data[:is_correct]
                 point += 1
-            else
-                
+            else    
                 data[:wrong] = Answer.find(answer_id).name
-
             end
             list << data
         end
